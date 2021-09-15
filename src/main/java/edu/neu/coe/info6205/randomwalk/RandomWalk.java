@@ -4,6 +4,8 @@
 
 package edu.neu.coe.info6205.randomwalk;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class RandomWalk {
@@ -21,6 +23,8 @@ public class RandomWalk {
      */
     private void move(int dx, int dy) {
         // TO BE IMPLEMENTED
+        x += dx;
+        y += dy;
     }
 
     /**
@@ -30,6 +34,9 @@ public class RandomWalk {
      */
     private void randomWalk(int m) {
         // TO BE IMPLEMENTED
+        for(int i=1; i<=m; i++){
+            randomMove();
+        }
     }
 
     /**
@@ -49,7 +56,8 @@ public class RandomWalk {
      */
     public double distance() {
         // TO BE IMPLEMENTED
-        return 0;
+        double dist = Math.sqrt(Math.pow(Math.abs(x), 2) + Math.pow(Math.abs(y), 2));
+        return dist;
     }
 
     /**
@@ -69,14 +77,33 @@ public class RandomWalk {
         return totalDistance / n;
     }
 
-    public static void main(String[] args) {
-        if (args.length == 0)
-            throw new RuntimeException("Syntax: RandomWalk steps [experiments]");
-        int m = Integer.parseInt(args[0]);
-        int n = 30;
-        if (args.length > 1) n = Integer.parseInt(args[1]);
-        double meanDistance = randomWalkMulti(m, n);
-        System.out.println(m + " steps: " + meanDistance + " over " + n + " experiments");
-    }
+    public static void main(String[] args) throws IOException {
+//        if (args.length == 0)
+//            throw new RuntimeException("Syntax: RandomWalk steps [experiments]")
 
+//        if (args.length > 1) n = Integer.parseInt(args[1]);
+//        double meanDistance = randomWalkMulti(m, n);
+//        System.out.println(m + " steps: " + meanDistance + " over " + n + " experiments");
+        FileWriter csvWriter = new FileWriter("relation.csv");
+        csvWriter.append("Distance");
+        csvWriter.append(",");
+        csvWriter.append("Steps");
+        csvWriter.append("\n");
+        int[] arr = {5, 10, 11, 16, 23, 30};
+        for(int j=0; j<arr.length; j++){
+            for (int i = 0; i < 10; i++) {
+                int m = arr[j];
+                int n = 30;
+                double meanDistance = randomWalkMulti(m, n);
+                System.out.println(m + " steps: " + meanDistance);
+                csvWriter.append(String.valueOf(meanDistance));
+                csvWriter.append(",");
+                csvWriter.append(String.valueOf(arr[j]));
+                csvWriter.append("\n");
+            }
+        }
+
+        csvWriter.flush();
+        csvWriter.close();
+    }
 }
