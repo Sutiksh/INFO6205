@@ -157,7 +157,7 @@ public class Benchmark_Timer<T> implements Benchmark<T> {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 
         //Create an ordered array and run benchmark test
-        for(int i = 500; i < 10000; i = i*2) {
+        for(int i = 200; i < 10000; i = i*2) {
 
             int j = i;
 
@@ -186,7 +186,7 @@ public class Benchmark_Timer<T> implements Benchmark<T> {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 
         //Create a partially ordered array and run benchmark test
-        for(int i = 250; i < 10000; i = i*2) {
+        for(int i = 200; i < 10000; i = i*2) {
             int j = i;
 
             //Provide the array of size j to supplier
@@ -224,7 +224,7 @@ public class Benchmark_Timer<T> implements Benchmark<T> {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 
         //Create a reverse ordered array and run benchmark test
-        for(int i = 100; i < 10000; i = i*2) {
+        for(int i = 200; i < 10000; i = i*2) {
             int j = i;
 
             //Provide the array of size j to supplier

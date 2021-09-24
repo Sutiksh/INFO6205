@@ -37,7 +37,7 @@ bin/*
 
 src/main/java/edu/neu/coe/info6205/sort/elementary/MergeSortDecisionTree\.java
 src/main/resources/sample\.kml
-
+target/
 tunnels\.kml
 
 NEU Tunnel System \(updated\)\.kml
