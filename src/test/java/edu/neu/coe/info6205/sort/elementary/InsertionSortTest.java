@@ -41,7 +41,7 @@ public class InsertionSortTest {
         final int inversions = (int) statPack.getStatistics(InstrumentedHelper.INVERSIONS).mean();
         assertEquals(0L, inversions);
         final int fixes = (int) statPack.getStatistics(InstrumentedHelper.FIXES).mean();
-        assertEquals(inversions, fixes);
+            assertEquals(inversions, fixes);
     }
 
     @Test
