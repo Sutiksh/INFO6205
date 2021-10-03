@@ -126,10 +126,10 @@ public class Benchmark_Timer<T> implements Benchmark<T> {
     public static void main(String[] args) {
 
         //Instantiate the insertion sort class
-        InsertionSort ins_sort = new InsertionSort();
+        InsertionSort insSort = new InsertionSort();
 
         //Instantiate Benchmark_Timer class to perform Benchmark Test
-        Benchmark_Timer<Integer[]> benchTimer = new Benchmark_Timer<>("Benchmark Test", null, (x) -> ins_sort.sort(x, 0, x.length), null);
+        Benchmark_Timer<Integer[]> benchTimer = new Benchmark_Timer<>("Benchmark Test", null, (x) -> insSort.sort(x, 0, x.length), null);
 
         //Create a randomly ordered array and run benchmark test
         for(int i = 200; i < 10000; i = i*2) {
