@@ -19,6 +19,8 @@ public class UF_Client {
             if(!uf_client.connected(p,q)) {
                 uf_client.union(p, q);
                 no_of_connections++;
+            }else{
+                no_of_connections++;
             }
         }
         return no_of_connections;
